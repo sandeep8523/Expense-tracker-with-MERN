@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinManager</title>
+    <link rel="icon" href="images-removebg-preview.png" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glitter-bg"></div>
+    <script src="script.js"></script>
+    <div class="header">
+        <h2>Expense Management System</h2>
+    </div>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Signup</a></p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let userData = localStorage.getItem(username);
+
+            if (userData) {
+                let userObj = JSON.parse(userData);
+                if (userObj.password === password) {
+                    alert("Login successful!");
+                    localStorage.setItem("currentUser", username);
+                    window.location.href = "home.html"; // Redirect to home
+                } else {
+                    alert("Incorrect password!");
+                }
+            } else {
+                alert("User not found!");
+            }
+        });
+    </script>
+</body>
+</html>

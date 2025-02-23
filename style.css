@@ -1,0 +1,160 @@
+/* Header - Top Center */
+.header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: transparent; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 22px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Glitter Background */
+.glitter-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 50%),
+        url('https://www.transparenttextures.com/patterns/stardust.png'),
+        url('https://source.unsplash.com/random/1920x1080?stars,glitter');
+    background-size: cover, auto, cover;
+    animation: glitter-animation 3s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+@keyframes glitter-animation {
+    0% { opacity: 1; filter: brightness(1); }
+    50% { opacity: 0.8; filter: brightness(1.5); }
+    100% { opacity: 1; filter: brightness(1); }
+}
+
+/* Centering the Container */
+.container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background:#80808033;
+
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    height: 400px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    text-align: center;
+}
+
+/* Heading */
+h2 {
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+form {
+    width: 100%; /* Make sure the form takes full width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input Fields */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: white;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    background: #ff9800;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #e68900;
+}
+
+/* Links */
+p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Cursor Highlight Effect */
+.highlight {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ff9800, transparent 80%);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(20px);
+    transform: translate(-50%, -50%);
+    animation: fadeOut 1s linear forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
